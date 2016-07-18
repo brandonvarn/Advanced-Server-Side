@@ -1,0 +1,9 @@
+# @author		: Brandon Varn
+# @description	: Server routing information for API calls
+# @version		: 1.0
+
+Options +FollowSymLinks
+RewriteEngine On
+#RewriteRule ^(.*)$ api.php?k=$1
+RewriteRule ^([0-9a-zA-Z]+)/item/([a-zA-Z]+)/(exactly|contains|startsWith|endsWith)-(.*)$ api.php?key=$1&column=$2&mode=$3&search=$4 [L]
+#RewriteRule ^([a-z0-9A-Z]+)/item/(a-ZA-Z)$ api.php?key=$1
